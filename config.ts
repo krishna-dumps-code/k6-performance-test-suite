@@ -1,11 +1,9 @@
-export const BASE_URL = "https://api.restful-api.dev"
+export const BASE_URL = __ENV.BASE_URL || 'https://api.restful-api.dev';
 
-export const SANITY = __ENV.SANITY === "true"
+export const CSV_PATH = __ENV.CSV_PATH || './data/objects.csv';
 
-// Modes
-// seed → create objects
-// patch → update existing objects
-// full → seed + patch
-export const MODE = __ENV.MODE || "full"
+export const SEEDED_FILE = __ENV.SEEDED_FILE || './data/seeded_objects.json';
 
-export const SEED_COUNT = 10
+export const AUTH_TOKEN = __ENV.AUTH_TOKEN || '';
+
+export const SANITY_MODE = __ENV.SANITY === 'true';
