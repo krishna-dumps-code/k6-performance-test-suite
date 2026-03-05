@@ -124,16 +124,17 @@ SANITY	quick test mode
 
 # Run Commands
 Run Full Test
-k6 run main.ts
+k6 run -e AUTH_TOKEN="<token>" -e CSV_PATH=./data/objects.csv main.ts
 
 Run Sanity Test
-SANITY=true k6 run main.ts
+k6 run -e SANITY=true -e AUTH_TOKEN="<token>" -e CSV_PATH=./data/objects.csv main.ts
 
 Run Seed Phase Only
-SCENARIO=seed k6 run main.ts
+k6 run -e SCENARIO=seed -e AUTH_TOKEN="<token>" -e CSV_PATH=./data/objects.csv main.ts
 
 Run Patch Phase Only
-SCENARIO=patch k6 run main.ts
+k6 run -e SCENARIO=patch -e AUTH_TOKEN="<token>" -e CSV_PATH=./data/objects.csv main.ts
+
 
 # Personal Approach & Implementation Notes
 
